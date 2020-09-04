@@ -50,11 +50,11 @@ install:
   - wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
  
 script:
-  - tar -zxvf openssl-1.1.1g.tar.gz && pwd && ls -l
   - cd luajit2/
   - make -j$JOBS CCDEBUG=-g Q= PREFIX=$LUAJIT_PREFIX CC=$CC XCFLAGS='-DLUA_USE_APICHECK -DLUA_USE_ASSERT -msse4.2'
   - sudo make install PREFIX=$LUAJIT_PREFIX
   - cd ..
+  - tar -zxvf openssl-1.1.1g.tar.gz && pwd && ls -l
   - export PATH=$PATH:`pwd`/nginx-devel-utils
   - ngx-build $NGINX_VERSION --with-ipv6 --with-http_realip_module --with-http_ssl_module --add-module=../lua-nginx-module --with-debug --with-openssl=../openssl-1.1.1g
   - export PATH=$PATH:`pwd`/work/nginx/sbin
