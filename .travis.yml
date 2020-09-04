@@ -60,4 +60,4 @@ script:
   - ngx-build $NGINX_VERSION --with-ipv6 --with-http_realip_module --with-http_ssl_module --add-module=../lua-nginx-module --with-debug --with-openssl=$OPENSSL_PATH
   - export PATH=$PATH:`pwd`/work/nginx/sbin
   - nginx -v
-  - prove -r t/resty/bugs.t
+  - prove -t t/resty/bugs.t
