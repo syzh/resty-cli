@@ -768,9 +768,7 @@ $main_include_directives
 
 stream {
     access_log off;
-    lua_socket_log_errors off;
     resolver @nameservers;
-    lua_regex_cache_max_entries 40960;
 $lua_package_path_config
 $stream_conf_lines
 }
