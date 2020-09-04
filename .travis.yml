@@ -59,4 +59,5 @@ script:
   - export PATH=$PATH:`pwd`/nginx-devel-utils
   - ngx-build $NGINX_VERSION --with-ipv6 --with-http_realip_module --with-http_ssl_module --add-module=../lua-nginx-module --with-debug --with-openssl=$OPENSSL_PATH
   - export PATH=$PATH:`pwd`/work/nginx/sbin
-  - prove -r t
+  - nginx -v
+  - prove -r t/resty/bugs.t
