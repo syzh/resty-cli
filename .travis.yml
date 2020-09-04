@@ -50,7 +50,7 @@ install:
   - wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
  
 script:
-  - tar -zxvf openssl-1.1.1g.tar.gz
+  - tar -zxvf openssl-1.1.1g.tar.gz && pwd && ls -l
   - cd luajit2/
   - make -j$JOBS CCDEBUG=-g Q= PREFIX=$LUAJIT_PREFIX CC=$CC XCFLAGS='-DLUA_USE_APICHECK -DLUA_USE_ASSERT -msse4.2'
   - sudo make install PREFIX=$LUAJIT_PREFIX
