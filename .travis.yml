@@ -57,7 +57,7 @@ script:
   - tar -zxvf openssl-1.1.1g.tar.gz 
   - export OPENSSL_PATH=`pwd`/openssl-1.1.1g
   - export PATH=$PATH:`pwd`/nginx-devel-utils
-  - ngx-build $NGINX_VERSION --with-ipv6 --with-http_realip_module --with-http_ssl_module --add-module=../lua-nginx-module --with-debug --with-openssl=$OPENSSL_PATH
+  - ngx-build $NGINX_VERSION --with-stream --with-http_realip_module --with-http_ssl_module --add-module=../lua-nginx-module --with-debug --with-openssl=$OPENSSL_PATH
   - export PATH=$PATH:`pwd`/work/nginx/sbin
   - nginx -v
   - prove -t t/resty/bugs.t
